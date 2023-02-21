@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Just Stream it! </title>
+        <script src="js/script.js" async></script>
+    </head>
+    
+    <body>
+        <div id="bloc_page">
+            
+            <header>
+                <div id="main"></div>              
+            </header>
+            
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>        
+                    </ul>
+                </nav>                                
+            </div>
+
+            <section id="best_movie"></section>            
+
+            <section class="carousel-section">
+                <div id="best_rated_movies_modal"></div>
+                <div><h1>The 7 best rated movies</h1></div>
+                <div class="wrapper">
+                    <ul class="carousel" data-target="carousel_best_rated_movies">
+                        <div id="best_rated_movies" data-target="card"></div>
+                    </ul>
+                </div>
+                <div class="button-wrapper-box">
+                    <button class= "button-wrapper" data-action="slideLeft_best_rated_movies">&#129088;</button>
+                    <button class= "button-wrapper" data-action="slideRight_best_rated_movies">&#129090;</button>
+                </div>                
+            </section>
+
+            <section class="carousel-section">
+                <div id="categories_animation_modal"></div>
+                <div><h1>The 7 best rated Animation movies</h1></div>
+                <div class="wrapper">
+                    <ul class="carousel" data-target="carousel_categories_animation">
+                        <div id="categories_animation" data-target="card"></div>
+                    </ul>
+                </div>
+                <div class="button-wrapper-box">
+                    <button class= "button-wrapper" data-action="slideLeft_categories_animation">&#129088;</button>
+                    <button class= "button-wrapper" data-action="slideRight_categories_animation">&#129090;</button>
+                </div>                
+            </section>
+
+            <section class="carousel-section">
+                <div id="categories_comedy_modal"></div>
+                <div><h1>The 7 best rated Comedy movies</h1></div>
+                <div class="wrapper">
+                    <ul class="carousel" data-target="carousel_categories_comedy">
+                        <div id="categories_comedy" data-target="card"></div>
+                    </ul>
+                </div>
+                <div class="button-wrapper-box">
+                    <button class= "button-wrapper" data-action="slideLeft_categories_comedy">&#129088;</button>
+                    <button class= "button-wrapper" data-action="slideRight_categories_comedy">&#129090;</button>
+                </div>                
+            </section>
+
+            <section class="carousel-section">
+                <div id="categories_scifi_modal"></div>
+                <div><h1>The 7 best rated Science-Fiction movies</h1></div>
+                <div class="wrapper">
+                    <ul class="carousel" data-target="carousel_categories_scifi">
+                        <div id="categories_scifi" data-target="card"></div>
+                    </ul>
+                </div>
+                <div class="button-wrapper-box">
+                    <button class= "button-wrapper" data-action="slideLeft_categories_scifi">&#129088;</button>
+                    <button class= "button-wrapper" data-action="slideRight_categories_scifi">&#129090;</button>
+                </div>                
+            </section>
+
+        </div>
+
+        
+                
+    </body>
+</html>

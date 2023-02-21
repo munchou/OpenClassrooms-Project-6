@@ -1,0 +1,292 @@
+body
+{
+    font-family: calibri, sans-serif;
+    color: #181818;
+}
+
+#bloc_page
+{
+    width: 900px;
+    margin: auto;
+}
+
+section h1, section h2, section a, nav a, .more_articles
+{
+    font-family: calibri, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase; /* Les titres sont automatiquement convertis en majuscule */
+}
+
+/* Header */
+
+#main
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 200px;
+    width:  100%;
+    border-radius: 0px 0px 5px 5px;
+    background: url('../img_site/main_title.jpg') no-repeat;
+    box-shadow: 0px 4px 4px rgba(234, 153, 32, 0.6);
+    margin-top:  -8px;
+    margin-bottom:  12px;
+    
+}
+
+
+
+/* Navigation */
+
+nav
+{
+    width: 900px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+nav ul
+{
+    list-style-type: none;
+    margin-top:  0px;
+    margin-bottom:  0px;
+    display: flex;
+    justify-content:  center;
+    border-bottom: 2px solid #ea9920;
+    border-top: 2px solid #ea9920;
+    padding-bottom: 2px;
+    background-color:  rgba(255, 255, 255, 0.8);
+
+}
+
+nav li
+{
+    margin-right: 14px;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ea9920;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #ea9920;
+    background-color: rgba(234, 153, 32, 0.15);
+}
+
+/* Body */
+
+
+section
+{
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    flex: 1;
+    border: 1px rgba(234, 153, 32, 1) solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(234, 153, 32, 0.6);
+    padding: 0 0 10px 10px;
+    background-color: rgba(234, 153, 32, 0.1);
+}
+
+section h1
+{
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-left: 6px;
+    margin-bottom: 10px;
+    border-left: 6px solid;
+    border-bottom: 2px solid;
+    /* margin-right: 10px; */
+    color: rgba(234, 153, 32, 1);
+}
+
+section h2
+{
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: underline 2px;
+}
+
+section p
+{
+    font-size: 1em;
+}
+
+.anchor {
+    position: absolute;
+    transform: translateY(-50vh);
+}
+
+.button {
+    color: rgba(234, 153, 32, 1);
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;    
+    text-decoration: none;
+    border: 2px rgba(234, 153, 32, 1) solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(234, 153, 32, 0.6);
+    background-color: rgba(234, 153, 32, 0.1);
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    position:absolute;
+    overflow:hidden;
+    left: 35%;
+    right:35%;
+    bottom: 10px
+}
+  
+.button:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background : rgba(234, 153, 32, 0.15);
+    left: 0;
+    bottom: 0;
+    transition: all .3s;
+}
+  
+.button:hover:before {
+    width: 100%;
+}
+
+.best_movie_img {
+    margin: 0 10px 0 0;
+}
+
+.description {
+    width: 880px;
+}
+
+
+
+ /* Modal Window */
+
+.modal {
+    /* min-width: 500px; */
+    z-index: 6;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 10%;
+    left: 50%;
+    right: 50%;
+    background-color: rgba(0,0,0,1);
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content{ /* Modal window design */    
+    position: relative;
+    border: 1px rgba(234, 153, 32, 1) solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(234, 153, 32, 0.6);
+    padding: 20px 0 10px 10px;
+    background-color: rgba(248, 221, 181, 1);    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_description { /* Details of the movie */
+    min-width: 600px;
+    margin: 0px 20px 30px 20px;
+}
+
+#best_rated_movies, #categories_animation, #categories_comedy, #categories_scifi {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.wrapper {
+    height: 250px;
+    width: 630px;
+    position:relative;
+    overflow:hidden;
+    margin: 0px auto 0px auto;
+    display: flex;
+  }
+
+.button-wrapper-box {
+    height: 100%;
+    left: 5%;
+    right:5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+  }
+
+.button-wrapper {
+    height: 200px;
+    width: 50px;
+    margin: 40px 0px 0px 0px;
+    color: rgba(234, 153, 32, 1);
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 3.0em;
+    border: 2px rgba(234, 153, 32, 1) solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(234, 153, 32, 0.6);
+    background-color: rgba(234, 153, 32, 0.1);
+    cursor: pointer;
+    position: relative;
+}
+  
+.button-wrapper:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background : rgba(234, 153, 32, 0.15);
+    left: 0;
+    bottom: 0;
+    transition: all .3s;
+}
+  
+.button-wrapper:hover:before {
+    width: 50px;
+}
+  
+.carousel {
+    z-index: 2;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease;
+}
+
+.carousel_movie_img {
+    width: 150px;    
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+}
+
+.carousel_movie_img:hover {
+    transform: scale(0.95);
+    border-radius: 10px;
+}
