@@ -16,11 +16,8 @@ function each_carousel(category) {
     const card = carousel.querySelector("[data-target='card']");
     
     const leftButton = document.querySelector(`[data-action='slideLeft_${category}']`);
-    const rightButton = document.querySelector(`[data-action='slideRight_${category}']`);
-    
-    
-    // const rightButton = document.getElementById(`#${category}_modal`).querySelector("[data-action='slideRight']");
-    
+    const rightButton = document.querySelector(`[data-action='slideRight_${category}']`);  
+
     // Prepare to limit the direction in which the carousel can slide, 
     // and to control how much the carousel advances by each time.
     // In order to slide the carousel so that only three cards are perfectly visible each time,
@@ -78,6 +75,7 @@ async function addMovie (movie_url, category) {
         const movie_details = await response.json();
 
         const modal_content = `
+        
             <div>
                 <h1>Best rated movie</h1>
                 <img class="best_movie_img" src=${movie_details.image_url} alt="best_movie" style="float:left";>
@@ -87,11 +85,9 @@ async function addMovie (movie_url, category) {
                 <a href="#modal_window" class="button">Show details</a>
                 
             </div>
-
-            <div id="modal_window" class="modal">
             
+            <div id="modal_window" class="modal">
                 <div class="modal-content">                    
-
                     <div class="modal_description">
                         <img src=${movie_details.image_url} alt="" style="float:right";>
                         <h2>${movie_details.title}</h2>
@@ -114,25 +110,24 @@ async function addMovie (movie_url, category) {
             </div>`;
 
         let section = document.querySelector('#best_movie');
-        section.innerHTML = modal_content;
+        section.innerHTML = modal_content;        
             
     }else{
         each_carousel(category);
 
         for (let i = 0; i < movie_url.length; i++) {
-        const response = await fetch(movie_url[i]);
-        const movie_details = await response.json();
+            const response = await fetch(movie_url[i]);
+            const movie_details = await response.json();
 
         let movies_list = document.createElement('div');
         let movies_list_content = document.createElement('div');
         let movie_info = `
-        <a href="#modal_window${category}${i}"><img class="carousel_movie_img" src=${movie_details.image_url} alt=""></a>`;
-
+        <a href="#modal${category}${i}"><img class="carousel_movie_img" src=${movie_details.image_url} alt=""></a>`;
+ 
         let movie_info_content = `
-        <div id="modal_window${category}${i}" class="modal">
-        
-            <div class="modal-content">                    
+        <div id="modal${category}${i}" class="modal">
 
+            <div class="modal-content">                    
                 <div class="modal_description">
                     <img src=${movie_details.image_url} alt="" style="float:right";>
                     <h2>${movie_details.title}</h2>
@@ -147,37 +142,32 @@ async function addMovie (movie_url, category) {
                     <p><u>Box office:</u> ${movie_details.budget}$</p>
                     <p><u>Summary:</u><br>${movie_details.long_description}</p>
                                             
-                    <a href=#${category} class="button">Close the window</a>                       
+                    <a href="#null" class="button">Close the window</a>                       
 
                 </div>
                 
             </div>
-        </div>`;
-        
+        </div>`;        
         
         movies_list.innerHTML = movie_info;
         document.querySelector(`#${category}`).appendChild(movies_list);
         movies_list_content.innerHTML = movie_info_content;
         document.querySelector(`#${category}_modal`).appendChild(movies_list_content);
         
-        // var testouille = category;
-        
-        // export function category_name() {
-        //     let test = category;
-        //     return test;            }
         }
     }
 }
+
 
 async function main() {
 
     await movies_genre_url(categories_links[0], category_best_movies);
     await movies_genre_url(categories_links[1], category_animation);
     await movies_genre_url(categories_links[2], category_comedy);
-    await movies_genre_url(categories_links[3], category_scifi);
+    await movies_genre_url(categories_links[3], category_scifi);    
 
     addMovie(category_best_movies[0], "category_best_movie");
-    addMovie(category_best_movies, "best_rated_movies");
+    addMovie(category_best_movies.splice(1, 8), "best_rated_movies");
     addMovie(category_animation, "categories_animation");
     addMovie(category_comedy, "categories_comedy");
     addMovie(category_scifi, "categories_scifi");

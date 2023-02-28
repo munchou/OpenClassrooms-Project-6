@@ -10,7 +10,6 @@
     
     <body>
         <div id="bloc_page">
-            
             <header>
                 <div id="main"></div>              
             </header>
@@ -19,14 +18,22 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="categories.html">Categories</a></li>        
+                        <li class="dropdown"><a href="#">Categories</a>
+                            <div class="dropdown-content">
+                            <a href="#best_movie">Best rated movie</a>
+                            <a href="#best_rated_movies_modal">The next 7 best rated movies</a>
+                            <a href="#categories_animation_modal">The 7 best rated animation movies</a>
+                            <a href="#categories_comedy_modal">The 7 best rated comedy movies</a>
+                            <a href="#categories_scifi_modal">The 7 best rated science-fiction movies</a>
+                            </div>
+                        </li>        
                     </ul>
                 </nav>                                
             </div>
 
             <section id="best_movie"></section>            
 
-            <section class="carousel-section">
+            <section class="carousel-section">                
                 <div id="best_rated_movies_modal"></div>
                 <div><h1>The 7 best rated movies</h1></div>
                 <div class="wrapper">
@@ -82,9 +89,7 @@
                 </div>                
             </section>
 
-        </div>
-
-        
+        </div>       
                 
     </body>
 </html>

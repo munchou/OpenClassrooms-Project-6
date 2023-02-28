@@ -14,7 +14,7 @@ section h1, section h2, section a, nav a, .more_articles
 {
     font-family: calibri, sans-serif;
     font-weight: normal;
-    text-transform: uppercase; /* Les titres sont automatiquement convertis en majuscule */
+    text-transform: uppercase; /* Text changed to uppercase */
 }
 
 /* Header */
@@ -27,7 +27,7 @@ section h1, section h2, section a, nav a, .more_articles
     height: 200px;
     width:  100%;
     border-radius: 0px 0px 5px 5px;
-    background: url('../img_site/main_title.jpg') no-repeat;
+    background: url('../img_site/main_title.png') no-repeat;
     box-shadow: 0px 4px 4px rgba(234, 153, 32, 0.6);
     margin-top:  -8px;
     margin-bottom:  12px;
@@ -78,8 +78,45 @@ nav a:hover
     background-color: rgba(234, 153, 32, 0.15);
 }
 
-/* Body */
 
+/* Dropdown menu - Container <div> to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+/* Dropdown menu - Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 247, 235);
+    border: 1px rgba(234, 153, 32, 1) solid;
+    border-radius: 5px;
+    width: 300%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 8;
+  }
+  
+/* Dropdown menu - Links */
+.dropdown-content a {
+    padding: 12px 16px;
+    font-size: 1em;
+    display: block;
+  }
+  
+/* Dropdown menu - Links on hover */
+.dropdown-content a:hover {
+    background-color: rgb(235, 185, 110);
+    color: rgb(255, 247, 235);
+}
+  
+/* Dropdown menu - Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+
+/* Body */
 
 section
 {
@@ -102,7 +139,6 @@ section h1
     margin-bottom: 10px;
     border-left: 6px solid;
     border-bottom: 2px solid;
-    /* margin-right: 10px; */
     color: rgba(234, 153, 32, 1);
 }
 
@@ -113,15 +149,10 @@ section h2
     text-decoration: underline 2px;
 }
 
-section p
+/* section p
 {
     font-size: 1em;
-}
-
-.anchor {
-    position: absolute;
-    transform: translateY(-50vh);
-}
+} */
 
 .button {
     color: rgba(234, 153, 32, 1);
@@ -167,21 +198,20 @@ section p
 }
 
 
-
  /* Modal Window */
 
 .modal {
-    /* min-width: 500px; */
     z-index: 6;
     visibility: hidden;
     opacity: 0;
     position: fixed;
     display: flex;
     justify-content: center;
-    top: 10%;
-    left: 50%;
-    right: 50%;
-    background-color: rgba(0,0,0,1);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .modal:target {
@@ -199,10 +229,14 @@ section p
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 700px;
+    max-width: 800px;
+    min-height: 700px;
+    max-height: 80%;
+    top: 50px;
 }
 
 .modal_description { /* Details of the movie */
-    min-width: 600px;
     margin: 0px 20px 30px 20px;
 }
 
@@ -290,3 +324,10 @@ section p
     transform: scale(0.95);
     border-radius: 10px;
 }
+
+/* .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0, 0.8);
+} */
