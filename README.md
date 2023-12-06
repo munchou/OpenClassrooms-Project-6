@@ -4,6 +4,9 @@
 
 _Testé sous Windows 10, Firefox 109 et Edge 109_
 
+# Preview
+![url](P6_UIforWebapp.gif)
+
 # Objectifs
 Développer une interface web permettant d'afficher les notes des meilleurs films de diverses catégories en temps réel, les données étant récupérées à partir d'une API locale.
 
